@@ -61,3 +61,35 @@ button {
   border-radius: 40px;
   cursor: pointer;
 }
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  border-bottom: #ccc 1px solid;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: url(img/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 9px;
+  left: 9px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background: url(img/checked.png);
+  background-size: cover;
+}
