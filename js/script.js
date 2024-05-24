@@ -14,6 +14,7 @@ function addTask() {
     li.appendChild(span);
 
     inputBox.value = '';
+    saveData();
   }
 }
 
@@ -22,5 +23,15 @@ listContainer.addEventListener('click', function (e) {
     e.target.classList.toggle('checked');
   } else if (e.target.tagName === 'SPAN') {
     e.target.parentElement.remove();
+    saveData();
   }
 });
+
+function saveData(data) {
+  localStorage.setItem('data', listContainer.innerHTML);
+}
+
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem('data');
+}
+showTask();
